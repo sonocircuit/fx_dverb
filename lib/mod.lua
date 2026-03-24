@@ -10,7 +10,7 @@ local function round_form(param, quant, form)
 end
 
 function FxDverb:add_params()
-  params:add_group("fx_dverb", "fx dverb", 9)
+  params:add_group("fx_dverb", "fx d v e  r   b", 9)
   FxDverb:add_slot("fx_dverb_slot", "slot")
   FxDverb:add_control("fx_dverb_level", "level", "amp", controlspec.new(0, 1, "lin", 0, 1), function(param) return round_form(param:get() * 100, 1, "%") end)
   FxDverb:add_control("fx_dverb_pre_filter", "pre filter", "preFilter", controlspec.new(0, 1, "lin", 0, 0.12), function(param) return round_form(param:get() * 100, 1, "%") end)
@@ -25,6 +25,6 @@ local function add_fx()
   FxDverb:add_params()
 end
 
-md.hook.register("script_post_init", "fx dverb mod post init", add_fx)
+md.hook.register("script_post_init", "fx dverb post init", add_fx)
 
 return FxDverb
